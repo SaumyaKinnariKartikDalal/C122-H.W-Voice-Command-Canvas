@@ -2,6 +2,7 @@ x = 0;
 y = 0;
 apple = "";
 draw_apple = "";
+to_number = 0;
 
 function preload() {
   apple = loadImage("apple.png");
@@ -50,10 +51,7 @@ function draw() {
 
 function speak() {
   var synth = window.speechSynthesis;
-
-  var utterThis = new SpeechSynthesisUtterance(speak_data);
-
-  synth.speak(utterThis);
-
   speak_data = to_number + " Apples drawn";
+  var utterThis = new SpeechSynthesisUtterance(speak_data);
+  synth.speak(utterThis);
 }
